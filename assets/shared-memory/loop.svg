@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" role="img" aria-label="Jean's memory loop" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="13">
+<defs><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2a78d6"/></marker><marker id="ae" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#c3c2b7"/></marker></defs>
+<text x="24" y="28" font-size="15" font-weight="600" fill="#1d1c1a">Jean's memory loop</text>
+<g transform="translate(20 16)">
+<rect x="190" y="24" width="140" height="44" rx="8" fill="none" stroke="#c3c2b7" stroke-width="1.25"/>
+<text x="260" y="43" font-weight="600" text-anchor="middle" fill="#1d1c1a">Sensei</text>
+<text x="260" y="60" font-size="11.5" text-anchor="middle" fill="#52514e">orchestrator</text>
+<path d="M260 68V134" fill="none" stroke="#c3c2b7" stroke-width="1.25" marker-end="url(#ae)"/>
+<text x="272" y="105" font-size="11.5" fill="#52514e">weekly staleness sweep</text>
+<rect x="4" y="152" width="112" height="44" rx="8" fill="none" stroke="#c3c2b7" stroke-width="1.25"/>
+<text x="60" y="171" font-weight="600" text-anchor="middle" fill="#1d1c1a">Agents</text>
+<text x="60" y="188" font-size="11.5" text-anchor="middle" fill="#52514e">workers · sensei</text>
+<path d="M210 144V204A50 9 0 0 0 310 204V144" fill="none" stroke="#c3c2b7" stroke-width="1.25"/>
+<ellipse cx="260" cy="144" rx="50" ry="9" fill="none" stroke="#c3c2b7" stroke-width="1.25"/>
+<text x="260" y="186" font-weight="600" text-anchor="middle" fill="#1d1c1a">Event log</text>
+<rect x="396" y="148" width="150" height="52" rx="8" fill="none" stroke="#c3c2b7" stroke-width="1.25"/>
+<text x="471" y="170" font-weight="600" text-anchor="middle" fill="#1d1c1a">Nightly librarian</text>
+<text x="471" y="188" font-size="11.5" text-anchor="middle" fill="#52514e">draft · review · commit</text>
+<rect x="606" y="144" width="104" height="44" rx="4" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.25"/>
+<rect x="602" y="148" width="104" height="44" rx="4" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.25"/>
+<rect x="598" y="152" width="104" height="44" rx="4" fill="#eaf2fc" stroke="#2a78d6" stroke-width="1.25"/>
+<text x="650" y="171" font-weight="600" text-anchor="middle" fill="#1d1c1a">Wiki</text>
+<text x="650" y="188" font-size="11.5" text-anchor="middle" fill="#52514e">Markdown pages</text>
+<rect x="584" y="268" width="132" height="44" rx="22" fill="none" stroke="#c3c2b7" stroke-width="1.25"/>
+<text x="650" y="287" font-weight="600" text-anchor="middle" fill="#1d1c1a">One-stop search</text>
+<text x="650" y="303" font-size="11" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#52514e" text-anchor="middle">search(…)</text>
+<g fill="none" stroke="#2a78d6" stroke-width="1.5"><path d="M116 174H209" marker-end="url(#ac)"/><path d="M311 174H395" marker-end="url(#ac)"/><path d="M546 174H597" marker-end="url(#ac)"/></g>
+<text x="162" y="166" font-size="11.5" text-anchor="middle" fill="#52514e">memorize</text>
+<text x="162" y="191" font-size="11.5" text-anchor="middle" fill="#52514e">task threads</text>
+<text x="353" y="166" font-size="11.5" text-anchor="middle" fill="#52514e">new events</text>
+<text x="572" y="166" font-size="11.5" text-anchor="middle" fill="#52514e">commits</text>
+<g fill="none" stroke="#2a78d6" stroke-width="1.5"><path d="M650 197V267" marker-end="url(#ac)"/><path d="M260 213V290H583" stroke-dasharray="5 4" marker-end="url(#ac)"/><path d="M650 312V338H60V197" marker-end="url(#ac)"/></g>
+<text x="642" y="236" font-size="11.5" text-anchor="end" fill="#52514e">pages</text>
+<text x="420" y="282" font-size="11.5" text-anchor="middle" fill="#52514e">not yet consolidated</text>
+<text x="360" y="331" font-size="11.5" text-anchor="middle" fill="#52514e">agents read</text>
+</g>
+</svg>

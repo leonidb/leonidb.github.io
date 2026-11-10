@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" aria-label="Most corrections fix what the same agent had just memorized" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="13">
+<text x="24" y="30" font-size="15" font-weight="600" fill="#1d1c1a">Most corrections fix what the same agent had just memorized</text>
+<text x="24" y="52" font-size="11.5" fill="#52514e">551 corrections agents made while working, by what each one points at</text>
+<text x="24" y="111" font-weight="600" fill="#1d1c1a">Fixes what it just memorized</text>
+<rect x="248" y="96" width="380.00" height="22" fill="#2a78d6" fill-opacity="0.85"/>
+<text x="638" y="111" font-weight="600" fill="#1d1c1a">58%</text>
+<text x="676" y="111" font-size="11.5" fill="#52514e">319</text>
+<text x="24" y="155" fill="#1d1c1a">Fixes a wiki page it names</text>
+<rect x="248" y="140" width="209.66" height="22" fill="#bdbcb4" fill-opacity="1"/>
+<text x="467.655" y="155" font-weight="600" fill="#1d1c1a">32%</text>
+<text x="505.655" y="155" font-size="11.5" fill="#52514e">176</text>
+<text x="24" y="199" fill="#1d1c1a">Points at nothing</text>
+<rect x="248" y="184" width="59.56" height="22" fill="#bdbcb4" fill-opacity="1"/>
+<text x="317.561" y="199" font-weight="600" fill="#1d1c1a">9%</text>
+<text x="355.561" y="199" font-size="11.5" fill="#52514e">50</text>
+<text x="24" y="243" fill="#1d1c1a">Fixes another agent’s memory</text>
+<rect x="248" y="228" width="7.15" height="22" fill="#bdbcb4" fill-opacity="1"/>
+<text x="265.147" y="243" font-weight="600" fill="#1d1c1a">1%</text>
+<text x="303.147" y="243" font-size="11.5" fill="#52514e">6</text>
+<line x1="248" x2="248" y1="86" y2="262" stroke="#c3c2b7"/>
+</svg>

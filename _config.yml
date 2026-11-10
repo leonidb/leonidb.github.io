@@ -1,1 +1,13 @@
+title: Leonid Bakaleynik
+description: Notes from building with AI agents
 theme: minima
+
+kramdown:
+  # Footnote back-links: an arrow with no emoji form in any browser.
+  footnote_backlink: "&#8593;"
+
+# Minima links the GitHub profile from every page footer.
+github_username: leonidb
+
+# Short post URLs; the date still shows on the page.
+permalink: /:title/
