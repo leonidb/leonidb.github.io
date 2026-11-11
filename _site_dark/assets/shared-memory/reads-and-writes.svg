@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-label="Workers read 3.6 times what they write; the sensei, about as much" font-family="-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif" font-size="13">
+<text x="24" y="30" font-size="15" font-weight="600" fill="#1d1c1a">Workers read 3.6 times what they write; the sensei, about as much</text>
+<text x="24" y="52" font-size="11.5" fill="#52514e">Searches, page reads and memorize calls, 23 Sep to 25 Oct, five projects</text>
+<rect x="176" y="70" width="12" height="12" fill="#bdbcb4"/>
+<text x="194" y="80" font-size="11.5" fill="#52514e">searches</text>
+<rect x="272" y="70" width="12" height="12" fill="#bdbcb4" fill-opacity="0.5"/>
+<text x="290" y="80" font-size="11.5" fill="#52514e">page reads</text>
+<rect x="382" y="70" width="12" height="12" fill="#2a78d6" fill-opacity="0.85"/>
+<text x="400" y="80" font-size="11.5" fill="#52514e">memorize</text>
+<text x="24" y="128" font-weight="600" fill="#1d1c1a">Sensei</text>
+<text x="24" y="146" font-size="11.5" fill="#52514e">1.1 reads per write</text>
+<rect x="176" y="112" width="187.02" height="22" fill="#bdbcb4"/>
+<rect x="363.02" y="112" width="232.98" height="22" fill="#bdbcb4" fill-opacity="0.5"/>
+<text x="606" y="128" fill="#1d1c1a">1,179 reads</text>
+<rect x="176" y="140" width="377.96" height="22" fill="#2a78d6" fill-opacity="0.85"/>
+<text x="563.964" y="156" fill="#1d1c1a">1,061 writes</text>
+<text x="24" y="220" font-weight="600" fill="#1d1c1a">Workers</text>
+<text x="24" y="238" font-size="11.5" fill="#52514e">3.6 reads per write</text>
+<rect x="176" y="204" width="99.75" height="22" fill="#bdbcb4"/>
+<rect x="275.75" y="204" width="145.34" height="22" fill="#bdbcb4" fill-opacity="0.5"/>
+<text x="431.089" y="220" fill="#1d1c1a">688 reads</text>
+<rect x="176" y="232" width="67.33" height="22" fill="#2a78d6" fill-opacity="0.85"/>
+<text x="253.328" y="248" fill="#1d1c1a">189 writes</text>
+<line x1="176" x2="176" y1="104" y2="278" stroke="#c3c2b7"/>
+</svg>

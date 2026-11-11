@@ -4,12 +4,8 @@ title: "Building shared memory for a team of agents"
 description: "And lessons from running them for 6 months in 6 projects"
 date: 2026-11-10
 image: /assets/shared-memory/card.png
+tags: [agents, memory, jean]
 ---
-
-* TOC
-{:toc}
-
-*And lessons from running them for 6 months in 6 projects*
 
 Have you ever felt like you need to reintroduce a fresh Claude Code to the same details about your project? Copy a context summary from one session into another? Wished you could just tell Claude Code to dispatch a separate task to another session, and have that session immediately pick up both the task context and a collective memory of all previous sessions in that project?
 
@@ -26,7 +22,7 @@ I wanted a project-level memory that is both shared between all the agents that 
 My initial inspiration came from Andrej Karpathy's [idea of a fully LLM-managed wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f), which got quite popular. At the time quite a few people noted that self-organized Markdown really does work and maybe that's all you need. I took that idea but adapted it in a more structural, frameworky way, because the original was about managing documents.
 
 <figure>
-  <img src="{{ '/assets/shared-memory/loop.svg' | relative_url }}" alt="Agents memorize and their task threads go into the event log; the nightly librarian (draft, review, commit) turns new events into the wiki; one-stop search reads the wiki pages and what is not consolidated yet, and agents read from it; the sensei runs a weekly staleness sweep into the event log.">
+  <img src="{{ '/assets/shared-memory/loop.svg' | relative_url }}" width="760" alt="Agents memorize and their task threads go into the event log; the nightly librarian (draft, review, commit) turns new events into the wiki; one-stop search reads the wiki pages and what is not consolidated yet, and agents read from it; the sensei runs a weekly staleness sweep into the event log.">
 </figure>
 
 Jean is built on an event log: what agents memorize and their task threads are appended to it and never edited. No agent edits the wiki directly: it changes only through the log. Once a day a headless agent, the librarian, consolidates the new events into a Markdown wiki. One search covers the wiki and what isn't consolidated yet. Once a week the sensei, the orchestrating agent, sweeps the wiki for stale facts and sends corrections back through the log.
@@ -108,7 +104,7 @@ One of the advantages of using event sourcing is that anything that happened in 
 **One in five.** A little under one in five memories opens with CORRECTION, often fixing the memory just before it. I expected most corrections to come from different agents memorizing conflicting things. In practice it's usually one agent that memorized too quickly, before it fully understood, and a few minutes later memorizes the fix. It can't change an event that's already memorized, so that's how a memory gets fixed, and the next consolidation folds in both.
 
 <figure>
-  <img src="{{ '/assets/shared-memory/correction-share.svg' | relative_url }}" alt="Bar chart: corrections as a share of all memories by month, May to October 2026: 21%, 23%, 15%, 16%, 17%, 25%; 18.6% across all months.">
+  <img src="{{ '/assets/shared-memory/correction-share.svg' | relative_url }}" width="760" alt="Bar chart: corrections as a share of all memories by month, May to October 2026: 21%, 23%, 15%, 16%, 17%, 25%; 18.6% across all months.">
   <figcaption>Event logs of six projects, May to October 2026. April, with 24 memories and no corrections, is left out.</figcaption>
 </figure>
 
@@ -121,12 +117,12 @@ One of the advantages of using event sourcing is that anything that happened in 
 For that to happen, the memory has to be caught before it's consolidated: once it's in the wiki, the fix goes to the page instead. Still, it was nice to see agents correct each other while a memory was fresh, or while the work it describes was still in progress.
 
 <figure>
-  <img src="{{ '/assets/shared-memory/what-agents-correct.svg' | relative_url }}" alt="Bar chart of 551 corrections agents made while working: 58% fix what the same agent had just memorized, 32% fix a wiki page they name, 9% point at nothing, 1% fix another agent's memory.">
+  <img src="{{ '/assets/shared-memory/what-agents-correct.svg' | relative_url }}" width="760" alt="Bar chart of 551 corrections agents made while working: 58% fix what the same agent had just memorized, 32% fix a wiki page they name, 9% point at nothing, 1% fix another agent's memory.">
   <figcaption>Event logs of five projects. Sorting rules in note 3.</figcaption>
 </figure>
 
 <figure>
-  <img src="{{ '/assets/shared-memory/how-soon.svg' | relative_url }}" alt="Bar chart of 177 corrections that cite the memory they fix, by the time between the two: 80% within the hour, 99% within a day.">
+  <img src="{{ '/assets/shared-memory/how-soon.svg' | relative_url }}" width="760" alt="Bar chart of 177 corrections that cite the memory they fix, by the time between the two: 80% within the hour, 99% within a day.">
   <figcaption>Event logs of five projects. The sweep’s 16 such corrections are left out: they fix what went stale, not a fresh mistake.</figcaption>
 </figure>
 
@@ -141,7 +137,7 @@ For that to happen, the memory has to be caught before it's consolidated: once i
 **Mostly rewriting.** A typical consolidation changes 15-33% of a wiki's pages, and most of those changes rewrite a page that's already there: for every new page, about 8 existing ones get updated, 13-16 in the two oldest wikis. The wiki as a whole keeps growing, but interestingly the average page got longer until August and has been getting shorter since: new pages are now added faster than new lines.
 
 <figure>
-  <img src="{{ '/assets/shared-memory/page-length.svg' | relative_url }}" alt="Line chart of average lines per page at each month's end: 100 in July, 148 in August, 143 in September, 123 in October.">
+  <img src="{{ '/assets/shared-memory/page-length.svg' | relative_url }}" width="760" alt="Line chart of average lines per page at each month's end: 100 in July, 148 in August, 143 in September, 123 in October.">
   <figcaption>Wiki git history, July to October 2026. Index and log pages left out.</figcaption>
 </figure>
 
@@ -150,7 +146,7 @@ For that to happen, the memory has to be caught before it's consolidated: once i
 Reads aren't events, so the event log has no record of them. The main source is the agents' session logs, which Claude Code keeps for 30 days by default. I'm adding read logging, so from now on it's recorded. In that month, about 800 searches and about 1,100 page reads, against about 1,250 memories. Workers read about 3.6 times what they write, and the sensei reads about as much as it writes. The difference between the sensei and the workers is interesting. It probably comes with orchestrating: the sensei sees the wider context and memorizes at a higher level, while workers mostly memorize what they ran into on a specific task. The sensei also reads more and writes much more than the workers, which I guess comes with the responsibility.
 
 <figure>
-  <img src="{{ '/assets/shared-memory/reads-and-writes.svg' | relative_url }}" alt="Bar chart of reads and writes by role: the sensei made 1,179 reads and 1,061 writes, 1.1 reads per write; workers made 688 reads and 189 writes, 3.6 reads per write.">
+  <img src="{{ '/assets/shared-memory/reads-and-writes.svg' | relative_url }}" width="760" alt="Bar chart of reads and writes by role: the sensei made 1,179 reads and 1,061 writes, 1.1 reads per write; workers made 688 reads and 189 writes, 3.6 reads per write.">
   <figcaption>Agents’ session logs, 23 Sep to 25 Oct. The librarian, which reads pages to write the wiki and never memorizes, is left out.</figcaption>
 </figure>
 

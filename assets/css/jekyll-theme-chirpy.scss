@@ -1,0 +1,18 @@
+---
+---
+
+@use 'main';
+
+/* The post card image carries the title already; keep it for link previews only. */
+.preview-img { display: none; }
+
+/* The diagrams are drawn for a white page; keep them readable in dark mode. */
+figure img[src$=".svg"] { background: #fff; padding: 0.5rem; border-radius: 6px; }
+
+/* The full name does not fit the sidebar at the theme's default size. */
+#sidebar .site-title { font-size: 1.4rem; }
+
+/* Figures: never wider than the column, centred, with the caption under them. */
+figure { margin: 1.5rem 0; text-align: center; }
+figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+figcaption { margin-top: 0.4rem; font-size: 0.85em; opacity: 0.75; }
