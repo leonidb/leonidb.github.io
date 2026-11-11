@@ -17,9 +17,6 @@
 /* The post card image carries the title already; keep it for link previews only. */
 .preview-img { display: none; }
 
-/* The diagrams are drawn for a white page; keep them readable in dark mode. */
-figure img[src$=".svg"] { background: #fff; padding: 0.5rem; border-radius: 6px; }
-
 /* The full name does not fit the sidebar at the theme's default size. */
 #sidebar .site-title { font-size: 1.4rem; }
 
