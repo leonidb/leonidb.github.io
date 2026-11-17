@@ -50,6 +50,14 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      # The feed links PNG twins of every SVG (Dev.to doesn't render SVG); they
+      # are generated here, never committed. See tools/svg2png.sh.
+      - name: Render PNG twins of SVGs for the feed
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin fonts-roboto
+          tools/svg2png.sh "_site${{ steps.pages.outputs.base_path }}"
+
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
