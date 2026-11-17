@@ -5,6 +5,9 @@ permalink: /feed.xml
 # carries only a summary and a link, so feed readers and Dev.to's RSS import get
 # the whole post. Root-relative src/href links are made absolute so images and
 # internal links work off-site. No compress layout: it would mangle <pre> blocks.
+# Images: .svg references become .png, because Dev.to (and many feed readers)
+# don't render SVG. So EVERY SVG a post uses needs a PNG twin beside it
+# (same name, rendered at 2x), or that image breaks in the feed.
 ---
 <?xml version="1.0" encoding="utf-8"?>
 {%- assign base = '/' | absolute_url -%}
@@ -40,7 +43,7 @@ permalink: /feed.xml
     <category term="{{ tag | xml_escape }}"/>
     {%- endfor %}
     <summary>{{ post.description | default: post.excerpt | strip_html | strip | xml_escape }}</summary>
-    <content type="html" xml:base="{{ post_absolute_url }}">{{ post.content | replace: 'src="/', src_abs | replace: 'href="/', href_abs | xml_escape }}</content>
+    <content type="html" xml:base="{{ post_absolute_url }}">{{ post.content | replace: 'src="/', src_abs | replace: 'href="/', href_abs | replace: '.svg"', '.png"' | xml_escape }}</content>
   </entry>
 {%- endfor %}
 </feed>
