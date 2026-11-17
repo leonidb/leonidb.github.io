@@ -6,8 +6,8 @@ permalink: /feed.xml
 # the whole post. Root-relative src/href links are made absolute so images and
 # internal links work off-site. No compress layout: it would mangle <pre> blocks.
 # Images: .svg references become .png, because Dev.to (and many feed readers)
-# don't render SVG. So EVERY SVG a post uses needs a PNG twin beside it
-# (same name, rendered at 2x), or that image breaks in the feed.
+# don't render SVG. The deploy workflow renders a 2x PNG twin of every SVG
+# under assets/ into the built site (tools/svg2png.sh); nothing to do per post.
 ---
 <?xml version="1.0" encoding="utf-8"?>
 {%- assign base = '/' | absolute_url -%}
