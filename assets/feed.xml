@@ -1,0 +1,46 @@
+---
+layout: null
+permalink: /feed.xml
+# Atom feed with the FULL post body. Overrides the theme's assets/feed.xml, which
+# carries only a summary and a link, so feed readers and Dev.to's RSS import get
+# the whole post. Root-relative src/href links are made absolute so images and
+# internal links work off-site. No compress layout: it would mangle <pre> blocks.
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- assign base = '/' | absolute_url -%}
+{%- assign src_abs = 'src="' | append: base -%}
+{%- assign href_abs = 'href="' | append: base %}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>{{ base }}</id>
+  <title>{{ site.title | xml_escape }}</title>
+  <subtitle>{{ site.description | xml_escape }}</subtitle>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>{{ site.social.name | xml_escape }}</name>
+    <uri>{{ base }}</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="{{ page.url | absolute_url }}"/>
+  <link rel="alternate" type="text/html" hreflang="{{ site.alt_lang | default: site.lang }}" href="{{ base }}"/>
+  <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+  <rights>© {{ 'now' | date: '%Y' }} {{ site.social.name | xml_escape }}</rights>
+  <icon>{{ '/assets/img/favicons/favicon.ico' | absolute_url }}</icon>
+  <logo>{{ '/assets/img/favicons/favicon-96x96.png' | absolute_url }}</logo>
+{%- for post in site.posts limit: 10 %}
+  {%- assign post_absolute_url = post.url | absolute_url %}
+  <entry>
+    <title>{{ post.title | xml_escape }}</title>
+    <link href="{{ post_absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}"/>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
+    <id>{{ post_absolute_url }}</id>
+    <author>
+      <name>{{ post.author | default: site.social.name | xml_escape }}</name>
+    </author>
+    {%- for tag in post.tags %}
+    <category term="{{ tag | xml_escape }}"/>
+    {%- endfor %}
+    <summary>{{ post.description | default: post.excerpt | strip_html | strip | xml_escape }}</summary>
+    <content type="html" xml:base="{{ post_absolute_url }}">{{ post.content | replace: 'src="/', src_abs | replace: 'href="/', href_abs | xml_escape }}</content>
+  </entry>
+{%- endfor %}
+</feed>
